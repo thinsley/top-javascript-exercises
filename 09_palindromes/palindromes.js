@@ -1,9 +1,12 @@
 const palindromes = function (stringToTest) {
     let lowerString = stringToTest.toLowerCase();
-    let lowerStringArray = lowerString.split("").filter(letter => letter != "!" && letter != "," && letter != ".");
+    let lowerStringArray = lowerString.split("").filter(letter => letter != "!" && letter != "," && letter != "." && letter != " ");
     let reverseString = lowerStringArray.reverse().join("");
-    let challengeString = lowerStringArray.join("");
-    console.log(challengeString, reverseString);
+    let challengeString = lowerString.split("").filter(letter => letter != "!" && letter != "," && letter != "." && letter != " ").join("");
+    
+    console.log(`Challenge String: ${challengeString}`);
+    console.log(`Reverse string: ${reverseString}`);
+
     if (challengeString == reverseString) {
         return true;
     }
